@@ -16,6 +16,7 @@
 package org.ws2ten1.repositories;
 
 import java.io.Serializable;
+import java.util.Optional;
 
 import org.springframework.dao.DataAccessException;
 import org.springframework.data.repository.NoRepositoryBean;
@@ -37,7 +38,7 @@ public interface ReadableRepository<E, ID extends Serializable>extends BaseRepos
 	 * @throws IllegalArgumentException if {@code id} is {@literal null}
 	 * @throws DataAccessException データアクセスエラーが発生した場合
 	 */
-	boolean exists(ID id);
+	boolean existsById(ID id);
 	
 	/**
 	 * Retrieves an entity by its id.
@@ -47,7 +48,7 @@ public interface ReadableRepository<E, ID extends Serializable>extends BaseRepos
 	 * @throws IllegalArgumentException if {@code id} is {@literal null}
 	 * @throws DataAccessException データアクセスエラーが発生した場合
 	 */
-	E findOne(ID id);
+	Optional<E> findById(ID id);
 	
 	/**
 	 * 指定したエンティティの識別子(ID)を返す。
