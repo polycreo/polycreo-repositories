@@ -17,16 +17,26 @@ package org.ws2ten1.repositories;
 
 import java.io.Serializable;
 
+import org.springframework.dao.DataAccessException;
 import org.springframework.data.repository.NoRepositoryBean;
 
 /**
- * Repository interface to retrieve multiple entities in batch.
+ * Repository interface to delete multiple entities.
  *
  * @param <E> the domain type the repository manages
  * @param <ID> the type of the id of the entity the repository manages
  */
 @NoRepositoryBean
-public interface BatchReadableRepository<E, ID extends Serializable>extends ReadableRepository<E, ID> {
+public interface BatchDeletableRepository<E, ID extends Serializable>extends DeletableRepository<E, ID> {
+	
+	/**
+	 * Deletes the given entities.
+	 *
+	 * @param entities entities to delete
+	 * @throws IllegalArgumentException in case the given {@link Iterable} is {@literal null}.
+	 * @throws DataAccessException データアクセスエラーが発生した場合
+	 */
+	void deleteAll(Iterable<? extends E> entities);
 	
 	/**
 	 * Returns all instances of the type with the given IDs.
@@ -34,5 +44,5 @@ public interface BatchReadableRepository<E, ID extends Serializable>extends Read
 	 * @param ids set of ID
 	 * @return set of entities
 	 */
-	Iterable<E> findAll(Iterable<ID> ids);
+	Iterable<E> deleteAllById(Iterable<ID> ids);
 }

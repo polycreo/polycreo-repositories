@@ -51,5 +51,5 @@ public interface ConditionalDeletableRepository<E, ID extends Serializable, C>ex
 	 * @throws OptimisticLockingFailureException
 	 * @throws DataAccessException データアクセスエラーが発生した場合
 	 */
-	void delete(ID id, C condition);
+	void deleteById(ID id, C condition);
 }

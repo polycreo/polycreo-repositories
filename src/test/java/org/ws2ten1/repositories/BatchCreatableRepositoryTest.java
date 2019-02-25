@@ -15,24 +15,15 @@
  */
 package org.ws2ten1.repositories;
 
-import java.io.Serializable;
-
-import org.springframework.data.repository.NoRepositoryBean;
+import org.springframework.data.repository.PagingAndSortingRepository;
 
 /**
- * Repository interface to retrieve multiple entities in batch.
- *
- * @param <E> the domain type the repository manages
- * @param <ID> the type of the id of the entity the repository manages
+ * Test for {@link BatchCreatableRepository}.
  */
-@NoRepositoryBean
-public interface BatchReadableRepository<E, ID extends Serializable>extends ReadableRepository<E, ID> {
+public class BatchCreatableRepositoryTest {
 	
-	/**
-	 * Returns all instances of the type with the given IDs.
-	 *
-	 * @param ids set of ID
-	 * @return set of entities
-	 */
-	Iterable<E> findAll(Iterable<ID> ids);
+	@SuppressWarnings("unused")
+	private interface AssertTypeCompatibleWithPagingAndSortingRepository
+			extends PagingAndSortingRepository<String, Long>, BatchCreatableRepository<String, Long> {
+	}
 }

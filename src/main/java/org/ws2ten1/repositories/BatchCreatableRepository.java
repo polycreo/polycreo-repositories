@@ -17,22 +17,25 @@ package org.ws2ten1.repositories;
 
 import java.io.Serializable;
 
+import org.springframework.dao.DataAccessException;
 import org.springframework.data.repository.NoRepositoryBean;
 
 /**
- * Repository interface to retrieve multiple entities in batch.
+ * Repository interface to write multiple entities.
  *
  * @param <E> the domain type the repository manages
  * @param <ID> the type of the id of the entity the repository manages
  */
 @NoRepositoryBean
-public interface BatchReadableRepository<E, ID extends Serializable>extends ReadableRepository<E, ID> {
+public interface BatchCreatableRepository<E, ID extends Serializable>extends CreatableRepository<E, ID> {
 	
 	/**
-	 * Returns all instances of the type with the given IDs.
+	 * Saves all given entities.
 	 *
-	 * @param ids set of ID
-	 * @return set of entities
+	 * @param entities entities to save
+	 * @return the saved entities
+	 * @throws IllegalArgumentException in case the given entity is {@literal null}.
+	 * @throws DataAccessException データアクセスエラーが発生した場合
 	 */
-	Iterable<E> findAll(Iterable<ID> ids);
+	<S extends E> Iterable<S> createAll(Iterable<S> entities);
 }
