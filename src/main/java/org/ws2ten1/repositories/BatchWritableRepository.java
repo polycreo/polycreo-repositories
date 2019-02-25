@@ -37,7 +37,7 @@ public interface BatchWritableRepository<E, ID extends Serializable>
 	 * @throws IllegalArgumentException in case the given {@link Iterable} is {@literal null}.
 	 * @throws DataAccessException データアクセスエラーが発生した場合
 	 */
-	void delete(Iterable<? extends E> entities);
+	void deleteAll(Iterable<? extends E> entities);
 	
 	/**
 	 * Saves all given entities.
@@ -47,6 +47,5 @@ public interface BatchWritableRepository<E, ID extends Serializable>
 	 * @throws IllegalArgumentException in case the given entity is {@literal null}.
 	 * @throws DataAccessException データアクセスエラーが発生した場合
 	 */
-	<S extends E> Iterable<S> save(Iterable<S> entities);
-	
+	<S extends E> Iterable<S> saveAll(Iterable<S> entities);
 }

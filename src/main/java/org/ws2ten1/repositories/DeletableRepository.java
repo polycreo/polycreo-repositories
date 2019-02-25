@@ -45,5 +45,5 @@ public interface DeletableRepository<E, ID extends Serializable>extends BaseRepo
 	 * @throws IllegalArgumentException in case the given {@code id} is {@literal null}
 	 * @throws DataAccessException データアクセスエラーが発生した場合
 	 */
-	void delete(ID id);
+	void deleteById(ID id);
 }
