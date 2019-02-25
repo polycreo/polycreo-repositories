@@ -350,7 +350,9 @@
     <module name="CatchParameterName">
       <property name="format" value="^(e|ex|[a-z][a-z][a-zA-Z]+)$"/>
     </module>
-    <module name="ClassTypeParameterName"/>
+    <module name="ClassTypeParameterName">
+      <property name="format" value="^[A-Z]{1,2}$"/>
+    </module>
     <module name="ConstantName"/>
     <module name="InterfaceTypeParameterName">
       <property name="format" value="^[A-Z]{1,2}$"/>
