@@ -55,12 +55,15 @@ repositories {
 }
 
 dependencies {
+	api 'org.ws2ten1:ws2ten1-chunks:1.0.0-rc2'
+	api 'org.springframework.data:spring-data-commons'
 	implementation 'org.springframework.boot:spring-boot-starter'
 	implementation 'org.springframework:spring-tx'
-	implementation 'org.springframework.data:spring-data-commons'
-	api 'org.ws2ten1:ws2ten1-chunks:1.0.0-rc1'
+
 	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
 	testCompileOnly 'org.projectlombok:lombok'
+	testAnnotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
