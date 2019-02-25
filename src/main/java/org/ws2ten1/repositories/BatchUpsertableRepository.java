@@ -21,23 +21,13 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.data.repository.NoRepositoryBean;
 
 /**
- * Repository interface to write multiple entities.
+ * Repository interface to upsert multiple entities.
  *
  * @param <E> the domain type the repository manages
  * @param <ID> the type of the id of the entity the repository manages
  */
 @NoRepositoryBean
-public interface BatchWritableRepository<E, ID extends Serializable>
-		extends WritableRepository<E, ID>, UpsertableRepository<E, ID> {
-	
-	/**
-	 * Deletes the given entities.
-	 *
-	 * @param entities entities to delete
-	 * @throws IllegalArgumentException in case the given {@link Iterable} is {@literal null}.
-	 * @throws DataAccessException データアクセスエラーが発生した場合
-	 */
-	void deleteAll(Iterable<? extends E> entities);
+public interface BatchUpsertableRepository<E, ID extends Serializable>extends UpsertableRepository<E, ID> {
 	
 	/**
 	 * Saves all given entities.
