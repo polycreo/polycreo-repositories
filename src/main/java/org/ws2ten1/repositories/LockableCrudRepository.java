@@ -16,6 +16,7 @@
 package org.ws2ten1.repositories;
 
 import java.io.Serializable;
+import java.util.Optional;
 
 import org.springframework.dao.DataAccessException;
 import org.springframework.data.repository.NoRepositoryBean;
@@ -41,7 +42,7 @@ public interface LockableCrudRepository<E, ID extends Serializable>extends CrudR
 	boolean exists(ID id, boolean forUpdate);
 	
 	/**
-	 * Retrieves an entity by its id.
+	 * Retrieves an entity by its ID.
 	 *
 	 * @param id must not be {@literal null}.
 	 * @param forUpdate flag
@@ -49,5 +50,5 @@ public interface LockableCrudRepository<E, ID extends Serializable>extends CrudR
 	 * @throws IllegalArgumentException if {@code id} is {@literal null}
 	 * @throws DataAccessException データアクセスエラーが発生した場合
 	 */
-	E findOne(ID id, boolean forUpdate);
+	Optional<E> findById(ID id, boolean forUpdate);
 }
