@@ -29,7 +29,7 @@ import org.springframework.data.repository.NoRepositoryBean;
  * @param <ID> the type of the id of the entity the repository manages
  */
 @NoRepositoryBean
-public interface UpdatableRepository<E, ID extends Serializable>extends BaseRepository<E, ID> {
+public interface UpdatableRepository<E, ID extends Serializable>extends ReadableRepository<E, ID> {
 	
 	/**
 	 * Update entity.
