@@ -23,7 +23,7 @@ import org.springframework.dao.IncorrectResultSizeDataAccessException;
 import org.springframework.data.repository.NoRepositoryBean;
 
 /**
- * Repository interface to update single entity.
+ * Repository interface to update and read single entity.
  *
  * @param <E> the domain type the repository manages
  * @param <ID> the type of the id of the entity the repository manages
