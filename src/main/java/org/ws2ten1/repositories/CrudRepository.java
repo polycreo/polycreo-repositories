@@ -20,12 +20,12 @@ import java.io.Serializable;
 import org.springframework.data.repository.NoRepositoryBean;
 
 /**
- * Repository interface readable and writable.
+ * Repository interface to create, read, update and delete single entity.
  *
  * @param <E> the domain type the repository manages
  * @param <ID> the type of the id of the entity the repository manages
  */
 @NoRepositoryBean
 public interface CrudRepository<E, ID extends Serializable>
-		extends ReadableRepository<E, ID>, WritableRepository<E, ID> {
+		extends CreatableRepository<E, ID>, UpdatableRepository<E, ID>, DeletableRepository<E, ID> {
 }
