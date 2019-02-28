@@ -50,13 +50,4 @@ public interface ReadableRepository<E, ID extends Serializable>extends BaseRepos
 	 */
 	Optional<E> findById(ID id);
 	
-	/**
-	 * 指定したエンティティの識別子(ID)を返す。
-	 *
-	 * @param entity エンティティ
-	 * @return ID
-	 * @throws DataAccessException データアクセスエラーが発生した場合
-	 */
-	ID getId(E entity);
-	
 }

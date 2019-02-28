@@ -28,4 +28,13 @@ import org.springframework.data.repository.Repository;
  */
 @NoRepositoryBean
 public interface BaseRepository<E, ID extends Serializable>extends Repository<E, ID> {
+	
+	/**
+	 * 指定したエンティティの識別子(ID)を返す。
+	 *
+	 * @param entity エンティティ
+	 * @return ID
+	 * @throws org.springframework.dao.DataAccessException データアクセスエラーが発生した場合
+	 */
+	ID getId(E entity);
 }
