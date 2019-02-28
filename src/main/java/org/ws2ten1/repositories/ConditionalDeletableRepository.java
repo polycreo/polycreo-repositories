@@ -26,10 +26,11 @@ import org.springframework.data.repository.NoRepositoryBean;
  *
  * @param <E> the domain type the repository manages
  * @param <ID> the type of the id of the entity the repository manages
- * @param <C> the condition type to update
+ * @param <C> the condition type to delete
  */
 @NoRepositoryBean
-public interface ConditionalDeletableRepository<E, ID extends Serializable, C>extends DeletableRepository<E, ID> {
+public interface ConditionalDeletableRepository<E, ID extends Serializable, C>
+		extends DeletableRepository<E, ID>, ConditionalRepository<E, ID, C> {
 	
 	/**
 	 * Deletes a given entity.
