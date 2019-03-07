@@ -30,7 +30,7 @@ import org.ws2ten1.chunks.Chunkable;
  * @param <ID> the type of the id of the entity the repository manages
  */
 @NoRepositoryBean
-public interface ChunkableRepository<E, ID extends Serializable>extends ReadableRepository<E, ID> {
+public interface ChunkableRepository<E, ID extends Serializable & Comparable<ID>>extends ReadableRepository<E, ID> {
 	
 	/**
 	 * Returns a {@link Chunk} of entities meeting the chunking restriction provided in the {@code Chunkable} object.
