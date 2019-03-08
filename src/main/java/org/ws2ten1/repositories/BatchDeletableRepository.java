@@ -30,6 +30,14 @@ import org.springframework.data.repository.NoRepositoryBean;
 public interface BatchDeletableRepository<E, ID extends Serializable>extends DeletableRepository<E, ID> {
 	
 	/**
+	 * Returns all instances of the type with the given IDs.
+	 *
+	 * @param ids set of ID
+	 * @return set of entities
+	 */
+	Iterable<E> deleteAllById(Iterable<ID> ids);
+	
+	/**
 	 * Deletes the given entities.
 	 *
 	 * @param entities entities to delete
@@ -37,12 +45,4 @@ public interface BatchDeletableRepository<E, ID extends Serializable>extends Del
 	 * @throws DataAccessException データアクセスエラーが発生した場合
 	 */
 	void deleteAll(Iterable<? extends E> entities);
-	
-	/**
-	 * Returns all instances of the type with the given IDs.
-	 *
-	 * @param ids set of ID
-	 * @return set of entities
-	 */
-	Iterable<E> deleteAllById(Iterable<ID> ids);
 }

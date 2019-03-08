@@ -33,17 +33,6 @@ public interface ConditionalDeletableRepository<E, ID extends Serializable, C>
 		extends DeletableRepository<E, ID>, ConditionalRepository<E, ID, C> {
 	
 	/**
-	 * Deletes a given entity.
-	 *
-	 * @param entity entity to delete
-	 * @param condition condition
-	 * @throws IllegalArgumentException in case the given entity is {@literal null}.
-	 * @throws OptimisticLockingFailureException
-	 * @throws DataAccessException データアクセスエラーが発生した場合
-	 */
-	void delete(E entity, C condition);
-	
-	/**
 	 * Deletes the entity with the given id.
 	 *
 	 * @param id must not be {@literal null}.
@@ -53,4 +42,15 @@ public interface ConditionalDeletableRepository<E, ID extends Serializable, C>
 	 * @throws DataAccessException データアクセスエラーが発生した場合
 	 */
 	void deleteById(ID id, C condition);
+	
+	/**
+	 * Deletes a given entity.
+	 *
+	 * @param entity entity to delete
+	 * @param condition condition
+	 * @throws IllegalArgumentException in case the given entity is {@literal null}.
+	 * @throws OptimisticLockingFailureException
+	 * @throws DataAccessException データアクセスエラーが発生した場合
+	 */
+	void delete(E entity, C condition);
 }

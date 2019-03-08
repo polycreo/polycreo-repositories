@@ -18,12 +18,12 @@ package org.ws2ten1.repositories;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
 /**
- * Test for {@link LockableCrudRepository}.
+ * Test for {@link LockableReadableRepository}.
  */
 public class LockableCrudRepositoryTest {
 	
 	@SuppressWarnings("unused")
 	private interface AssertTypeCompatibleWithPagingAndSortingRepository
-			extends PagingAndSortingRepository<String, Long>, LockableCrudRepository<String, Long> {
+			extends PagingAndSortingRepository<String, Long>, LockableReadableRepository<String, Long> {
 	}
 }

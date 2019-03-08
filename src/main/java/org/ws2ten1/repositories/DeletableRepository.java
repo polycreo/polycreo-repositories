@@ -30,15 +30,6 @@ import org.springframework.data.repository.NoRepositoryBean;
 public interface DeletableRepository<E, ID extends Serializable>extends BaseRepository<E, ID> {
 	
 	/**
-	 * Deletes a given entity.
-	 *
-	 * @param entity entity to delete
-	 * @throws IllegalArgumentException in case the given entity is {@literal null}.
-	 * @throws DataAccessException データアクセスエラーが発生した場合
-	 */
-	void delete(E entity);
-	
-	/**
 	 * Deletes the entity with the given id.
 	 *
 	 * @param id must not be {@literal null}.
@@ -46,4 +37,13 @@ public interface DeletableRepository<E, ID extends Serializable>extends BaseRepo
 	 * @throws DataAccessException データアクセスエラーが発生した場合
 	 */
 	void deleteById(ID id);
+	
+	/**
+	 * Deletes a given entity.
+	 *
+	 * @param entity entity to delete
+	 * @throws IllegalArgumentException in case the given entity is {@literal null}.
+	 * @throws DataAccessException データアクセスエラーが発生した場合
+	 */
+	void delete(E entity);
 }
