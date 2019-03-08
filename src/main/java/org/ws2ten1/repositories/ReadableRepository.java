@@ -20,6 +20,7 @@ import java.util.Optional;
 
 import org.springframework.dao.DataAccessException;
 import org.springframework.data.repository.NoRepositoryBean;
+import org.springframework.data.repository.Repository;
 
 /**
  * Repository interface to retrieve single entity.
@@ -28,7 +29,8 @@ import org.springframework.data.repository.NoRepositoryBean;
  * @param <ID> the type of the id of the entity the repository manages
  */
 @NoRepositoryBean
-public interface ReadableRepository<E, ID extends Serializable>extends BaseRepository<E, ID> {
+public interface ReadableRepository<E, ID extends Serializable>
+		extends Repository<E, ID> {
 	
 	/**
 	 * Retrieves an entity by its id.

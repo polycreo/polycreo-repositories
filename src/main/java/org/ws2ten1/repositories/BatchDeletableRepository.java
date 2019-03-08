@@ -19,6 +19,7 @@ import java.io.Serializable;
 
 import org.springframework.dao.DataAccessException;
 import org.springframework.data.repository.NoRepositoryBean;
+import org.springframework.data.repository.Repository;
 
 /**
  * Repository interface to delete multiple entities.
@@ -27,7 +28,8 @@ import org.springframework.data.repository.NoRepositoryBean;
  * @param <ID> the type of the id of the entity the repository manages
  */
 @NoRepositoryBean
-public interface BatchDeletableRepository<E, ID extends Serializable>extends DeletableRepository<E, ID> {
+public interface BatchDeletableRepository<E, ID extends Serializable>
+		extends Repository<E, ID> {
 	
 	/**
 	 * Returns all instances of the type with the given IDs.

@@ -18,6 +18,7 @@ package org.ws2ten1.repositories;
 import java.io.Serializable;
 
 import org.springframework.data.repository.NoRepositoryBean;
+import org.springframework.data.repository.Repository;
 
 /**
  * Repository interface to save (upsert) single entity.
@@ -26,7 +27,8 @@ import org.springframework.data.repository.NoRepositoryBean;
  * @param <ID> the type of the id of the entity the repository manages
  */
 @NoRepositoryBean
-public interface UpsertableRepository<E, ID extends Serializable>extends BaseRepository<E, ID> {
+public interface UpsertableRepository<E, ID extends Serializable>
+		extends Repository<E, ID> {
 	
 	/**
 	 * Saves a given entity. Use the returned instance for further operations as the save operation might have changed the

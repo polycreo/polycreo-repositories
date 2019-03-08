@@ -20,6 +20,7 @@ import java.util.Optional;
 
 import org.springframework.dao.DataAccessException;
 import org.springframework.data.repository.NoRepositoryBean;
+import org.springframework.data.repository.Repository;
 
 /**
  * CRUD repository to lock row.
@@ -28,7 +29,8 @@ import org.springframework.data.repository.NoRepositoryBean;
  * @param <ID> the type of the id of the entity the repository manages
  */
 @NoRepositoryBean
-public interface LockableReadableRepository<E, ID extends Serializable>extends BaseRepository<E, ID> {
+public interface LockableReadableRepository<E, ID extends Serializable>
+		extends Repository<E, ID> {
 	
 	/**
 	 * Retrieves an entity by its ID.
