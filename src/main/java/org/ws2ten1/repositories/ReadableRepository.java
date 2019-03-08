@@ -20,6 +20,7 @@ import java.util.Optional;
 
 import org.springframework.dao.DataAccessException;
 import org.springframework.data.repository.NoRepositoryBean;
+import org.springframework.data.repository.Repository;
 
 /**
  * Repository interface to retrieve single entity.
@@ -28,17 +29,8 @@ import org.springframework.data.repository.NoRepositoryBean;
  * @param <ID> the type of the id of the entity the repository manages
  */
 @NoRepositoryBean
-public interface ReadableRepository<E, ID extends Serializable>extends BaseRepository<E, ID> {
-	
-	/**
-	 * Returns whether an entity with the given id exists.
-	 *
-	 * @param id must not be {@literal null}.
-	 * @return true if an entity with the given id exists, {@literal false} otherwise
-	 * @throws IllegalArgumentException if {@code id} is {@literal null}
-	 * @throws DataAccessException データアクセスエラーが発生した場合
-	 */
-	boolean existsById(ID id);
+public interface ReadableRepository<E, ID extends Serializable>
+		extends Repository<E, ID> {
 	
 	/**
 	 * Retrieves an entity by its id.
@@ -50,4 +42,13 @@ public interface ReadableRepository<E, ID extends Serializable>extends BaseRepos
 	 */
 	Optional<E> findById(ID id);
 	
+	/**
+	 * Returns whether an entity with the given id exists.
+	 *
+	 * @param id must not be {@literal null}.
+	 * @return true if an entity with the given id exists, {@literal false} otherwise
+	 * @throws IllegalArgumentException if {@code id} is {@literal null}
+	 * @throws DataAccessException データアクセスエラーが発生した場合
+	 */
+	boolean existsById(ID id);
 }

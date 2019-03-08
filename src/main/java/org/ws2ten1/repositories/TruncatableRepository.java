@@ -19,6 +19,7 @@ import java.io.Serializable;
 
 import org.springframework.dao.DataAccessException;
 import org.springframework.data.repository.NoRepositoryBean;
+import org.springframework.data.repository.Repository;
 
 /**
  * Repository interface to truncate (delete all).
@@ -27,7 +28,8 @@ import org.springframework.data.repository.NoRepositoryBean;
  * @param <ID> the type of the id of the entity the repository manages
  */
 @NoRepositoryBean
-public interface TruncatableRepository<E, ID extends Serializable>extends BaseRepository<E, ID> {
+public interface TruncatableRepository<E, ID extends Serializable>
+		extends Repository<E, ID> {
 	
 	/**
 	 * Deletes all entities managed by the repository.

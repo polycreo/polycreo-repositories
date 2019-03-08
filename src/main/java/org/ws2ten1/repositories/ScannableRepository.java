@@ -32,14 +32,6 @@ import org.springframework.data.repository.NoRepositoryBean;
 public interface ScannableRepository<E, ID extends Serializable>extends ReadableRepository<E, ID> {
 	
 	/**
-	 * Returns the number of entities available.
-	 *
-	 * @return the number of entities
-	 * @throws DataAccessException データアクセスエラーが発生した場合
-	 */
-	long count();
-	
-	/**
 	 * Returns all instances of the type.
 	 *
 	 * @return all entities
@@ -56,4 +48,11 @@ public interface ScannableRepository<E, ID extends Serializable>extends Readable
 	 */
 	List<E> findAll(Sort sort);
 	
+	/**
+	 * Returns the number of entities available.
+	 *
+	 * @return the number of entities
+	 * @throws DataAccessException データアクセスエラーが発生した場合
+	 */
+	long count();
 }

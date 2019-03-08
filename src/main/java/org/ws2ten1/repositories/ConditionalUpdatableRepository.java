@@ -30,8 +30,7 @@ import org.springframework.data.repository.NoRepositoryBean;
  * @param <C> the condition type to update
  */
 @NoRepositoryBean
-public interface ConditionalUpdatableRepository<E, ID extends Serializable, C>
-		extends UpdatableRepository<E, ID>, ConditionalRepository<E, ID, C> {
+public interface ConditionalUpdatableRepository<E, ID extends Serializable, C>extends UpdatableRepository<E, ID> {
 	
 	/**
 	 * Update entity.

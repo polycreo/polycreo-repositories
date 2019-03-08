@@ -20,6 +20,7 @@ import java.util.Optional;
 
 import org.springframework.dao.DataAccessException;
 import org.springframework.data.repository.NoRepositoryBean;
+import org.springframework.data.repository.Repository;
 
 /**
  * CRUD repository to lock row.
@@ -28,18 +29,8 @@ import org.springframework.data.repository.NoRepositoryBean;
  * @param <ID> the type of the id of the entity the repository manages
  */
 @NoRepositoryBean
-public interface LockableCrudRepository<E, ID extends Serializable>extends CrudRepository<E, ID> {
-	
-	/**
-	 * Returns whether an entity with the given id exists.
-	 *
-	 * @param id must not be {@literal null}.
-	 * @param forUpdate flag
-	 * @return true if an entity with the given id exists, {@literal false} otherwise
-	 * @throws IllegalArgumentException if {@code id} is {@literal null}
-	 * @throws DataAccessException データアクセスエラーが発生した場合
-	 */
-	boolean exists(ID id, boolean forUpdate);
+public interface LockableReadableRepository<E, ID extends Serializable>
+		extends Repository<E, ID> {
 	
 	/**
 	 * Retrieves an entity by its ID.
@@ -51,4 +42,15 @@ public interface LockableCrudRepository<E, ID extends Serializable>extends CrudR
 	 * @throws DataAccessException データアクセスエラーが発生した場合
 	 */
 	Optional<E> findById(ID id, boolean forUpdate);
+	
+	/**
+	 * Returns whether an entity with the given id exists.
+	 *
+	 * @param id must not be {@literal null}.
+	 * @param forUpdate flag
+	 * @return true if an entity with the given id exists, {@literal false} otherwise
+	 * @throws IllegalArgumentException if {@code id} is {@literal null}
+	 * @throws DataAccessException データアクセスエラーが発生した場合
+	 */
+	boolean existsById(ID id, boolean forUpdate);
 }
