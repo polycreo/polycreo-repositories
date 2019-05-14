@@ -35,7 +35,7 @@ public interface ScannableRepository<E, ID extends Serializable>extends Readable
 	 * Returns all instances of the type.
 	 *
 	 * @return all entities
-	 * @throws DataAccessException データアクセスエラーが発生した場合
+	 * @throws DataAccessException if a data access error occurred
 	 */
 	Iterable<E> findAll();
 	
@@ -44,7 +44,7 @@ public interface ScannableRepository<E, ID extends Serializable>extends Readable
 	 *
 	 * @param sort sorting information
 	 * @return all entities sorted by the given options
-	 * @throws DataAccessException データアクセスエラーが発生した場合
+	 * @throws DataAccessException if a data access error occurred
 	 */
 	List<E> findAll(Sort sort);
 	
@@ -52,7 +52,7 @@ public interface ScannableRepository<E, ID extends Serializable>extends Readable
 	 * Returns the number of entities available.
 	 *
 	 * @return the number of entities
-	 * @throws DataAccessException データアクセスエラーが発生した場合
+	 * @throws DataAccessException if a data access error occurred
 	 */
 	long count();
 }

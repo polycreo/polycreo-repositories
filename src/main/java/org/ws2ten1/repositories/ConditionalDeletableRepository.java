@@ -38,7 +38,7 @@ public interface ConditionalDeletableRepository<E, ID extends Serializable, C>ex
 	 * @param condition condition
 	 * @throws IllegalArgumentException in case the given {@code id} is {@literal null}
 	 * @throws OptimisticLockingFailureException
-	 * @throws DataAccessException データアクセスエラーが発生した場合
+	 * @throws DataAccessException if a data access error occurred
 	 */
 	void deleteById(ID id, C condition);
 	
@@ -49,7 +49,7 @@ public interface ConditionalDeletableRepository<E, ID extends Serializable, C>ex
 	 * @param condition condition
 	 * @throws IllegalArgumentException in case the given entity is {@literal null}.
 	 * @throws OptimisticLockingFailureException
-	 * @throws DataAccessException データアクセスエラーが発生した場合
+	 * @throws DataAccessException if a data access error occurred
 	 */
 	void delete(E entity, C condition);
 }

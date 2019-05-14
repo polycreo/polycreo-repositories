@@ -35,7 +35,7 @@ public interface BatchCreatableRepository<E, ID extends Serializable>extends Cre
 	 * @param entities entities to save
 	 * @return the saved entities
 	 * @throws IllegalArgumentException in case the given entity is {@literal null}.
-	 * @throws DataAccessException データアクセスエラーが発生した場合
+	 * @throws DataAccessException if a data access error occurred
 	 */
 	<S extends E> Iterable<S> createAll(Iterable<S> entities);
 }

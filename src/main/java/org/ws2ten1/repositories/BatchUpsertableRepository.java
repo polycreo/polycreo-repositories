@@ -35,7 +35,7 @@ public interface BatchUpsertableRepository<E, ID extends Serializable>extends Up
 	 * @param entities entities to save
 	 * @return the saved entities
 	 * @throws IllegalArgumentException in case the given entity is {@literal null}.
-	 * @throws DataAccessException データアクセスエラーが発生した場合
+	 * @throws DataAccessException if a data access error occurred
 	 */
 	<S extends E> Iterable<S> saveAll(Iterable<S> entities);
 }

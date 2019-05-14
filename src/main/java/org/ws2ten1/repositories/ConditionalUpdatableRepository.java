@@ -42,7 +42,7 @@ public interface ConditionalUpdatableRepository<E, ID extends Serializable, C>ex
 	 * @return updated entity
 	 * @throws IncorrectResultSizeDataAccessException 対象エンティティがなかった場合
 	 * @throws OptimisticLockingFailureException
-	 * @throws DataAccessException データアクセスエラーが発生した場合
+	 * @throws DataAccessException if a data access error occurred
 	 */
 	<S extends E> S update(S entity, C condition);
 }

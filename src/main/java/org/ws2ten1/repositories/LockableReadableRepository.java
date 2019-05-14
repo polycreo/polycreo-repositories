@@ -39,7 +39,7 @@ public interface LockableReadableRepository<E, ID extends Serializable>
 	 * @param forUpdate flag
 	 * @return the entity with the given id or {@literal null} if none found
 	 * @throws IllegalArgumentException if {@code id} is {@literal null}
-	 * @throws DataAccessException データアクセスエラーが発生した場合
+	 * @throws DataAccessException if a data access error occurred
 	 */
 	Optional<E> findById(ID id, boolean forUpdate);
 	
@@ -50,7 +50,7 @@ public interface LockableReadableRepository<E, ID extends Serializable>
 	 * @param forUpdate flag
 	 * @return true if an entity with the given id exists, {@literal false} otherwise
 	 * @throws IllegalArgumentException if {@code id} is {@literal null}
-	 * @throws DataAccessException データアクセスエラーが発生した場合
+	 * @throws DataAccessException if a data access error occurred
 	 */
 	boolean existsById(ID id, boolean forUpdate);
 }

@@ -40,7 +40,7 @@ public interface CreatableRepository<E, ID extends Serializable>
 	 * @param entity entity to update
 	 * @return updated entity
 	 * @throws DuplicateKeyException 対象エンティティがすでにあった場合
-	 * @throws DataAccessException データアクセスエラーが発生した場合
+	 * @throws DataAccessException if a data access error occurred
 	 */
 	<S extends E> S create(S entity);
 }
