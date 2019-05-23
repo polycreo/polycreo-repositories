@@ -36,7 +36,7 @@ public interface DeletableRepository<E, ID extends Serializable>
 	 *
 	 * @param id must not be {@literal null}.
 	 * @throws IllegalArgumentException in case the given {@code id} is {@literal null}
-	 * @throws DataAccessException データアクセスエラーが発生した場合
+	 * @throws DataAccessException if a data access error occurred
 	 */
 	void deleteById(ID id);
 	
@@ -45,7 +45,7 @@ public interface DeletableRepository<E, ID extends Serializable>
 	 *
 	 * @param entity entity to delete
 	 * @throws IllegalArgumentException in case the given entity is {@literal null}.
-	 * @throws DataAccessException データアクセスエラーが発生した場合
+	 * @throws DataAccessException if a data access error occurred
 	 */
 	void delete(E entity);
 }

@@ -37,8 +37,8 @@ public interface ChunkableRepository<E, ID extends Serializable & Comparable<ID>
 	 *
 	 * @param chunkable chunking information
 	 * @return a chunk of entities
-	 * @throws DataAccessException データアクセスエラーが発生した場合
 	 * @throws NullPointerException 引数に{@code null}を与えた場合
+	 * @throws DataAccessException if a data access error occurred
 	 */
 	Chunk<E> findAll(Chunkable chunkable);
 	

@@ -40,7 +40,7 @@ public interface UpdatableRepository<E, ID extends Serializable>extends Readable
 	 * @return updated entity
 	 * @throws IncorrectResultSizeDataAccessException 対象エンティティがなかった場合
 	 * @throws DataIntegrityViolationException 一意制約に違反した場合
-	 * @throws DataAccessException データアクセスエラーが発生した場合
+	 * @throws DataAccessException if a data access error occurred
 	 */
 	<S extends E> S update(S entity);
 }

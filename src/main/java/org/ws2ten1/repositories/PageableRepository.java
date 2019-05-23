@@ -17,6 +17,7 @@ package org.ws2ten1.repositories;
 
 import java.io.Serializable;
 
+import org.springframework.dao.DataAccessException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.NoRepositoryBean;
@@ -35,6 +36,7 @@ public interface PageableRepository<E, ID extends Serializable>extends ReadableR
 	 *
 	 * @param pageable paging information
 	 * @return a page of entities
+	 * @throws DataAccessException if a data access error occurred
 	 */
 	Page<E> findAll(Pageable pageable);
 	

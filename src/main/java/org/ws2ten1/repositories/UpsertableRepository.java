@@ -17,6 +17,7 @@ package org.ws2ten1.repositories;
 
 import java.io.Serializable;
 
+import org.springframework.dao.DataAccessException;
 import org.springframework.data.repository.NoRepositoryBean;
 import org.springframework.data.repository.Repository;
 
@@ -36,6 +37,7 @@ public interface UpsertableRepository<E, ID extends Serializable>
 	 *
 	 * @param entity entity to save
 	 * @return the saved entity
+	 * @throws DataAccessException if a data access error occurred
 	 */
 	<S extends E> S save(S entity);
 }

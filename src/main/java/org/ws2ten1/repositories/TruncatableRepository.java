@@ -34,7 +34,7 @@ public interface TruncatableRepository<E, ID extends Serializable>
 	/**
 	 * Deletes all entities managed by the repository.
 	 *
-	 * @throws DataAccessException データアクセスエラーが発生した場合
+	 * @throws DataAccessException if a data access error occurred
 	 */
 	void deleteAll();
 	

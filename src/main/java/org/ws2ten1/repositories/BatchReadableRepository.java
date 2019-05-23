@@ -17,6 +17,7 @@ package org.ws2ten1.repositories;
 
 import java.io.Serializable;
 
+import org.springframework.dao.DataAccessException;
 import org.springframework.data.repository.NoRepositoryBean;
 
 /**
@@ -33,6 +34,7 @@ public interface BatchReadableRepository<E, ID extends Serializable>extends Read
 	 *
 	 * @param ids set of ID
 	 * @return set of entities
+	 * @throws DataAccessException if a data access error occurred
 	 */
 	Iterable<E> findAll(Iterable<ID> ids);
 }

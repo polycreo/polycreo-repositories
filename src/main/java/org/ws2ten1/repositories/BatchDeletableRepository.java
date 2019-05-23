@@ -36,6 +36,7 @@ public interface BatchDeletableRepository<E, ID extends Serializable>
 	 *
 	 * @param ids set of ID
 	 * @return set of entities
+	 * @throws DataAccessException if a data access error occurred
 	 */
 	Iterable<E> deleteAllById(Iterable<ID> ids);
 	
@@ -45,6 +46,7 @@ public interface BatchDeletableRepository<E, ID extends Serializable>
 	 * @param entities entities to delete
 	 * @throws IllegalArgumentException in case the given {@link Iterable} is {@literal null}.
 	 * @throws DataAccessException データアクセスエラーが発生した場合
+	 * @throws DataAccessException if a data access error occurred
 	 */
 	void deleteAll(Iterable<? extends E> entities);
 }
