@@ -16,11 +16,11 @@
 package org.ws2ten1.repositories;
 
 import java.io.Serializable;
+import java.util.List;
 
 import org.springframework.dao.DataAccessException;
 import org.springframework.data.repository.NoRepositoryBean;
 
-import org.ws2ten1.chunks.Chunk;
 import org.ws2ten1.chunks.Chunkable;
 
 /**
@@ -33,13 +33,13 @@ import org.ws2ten1.chunks.Chunkable;
 public interface ChunkableRepository<E, ID extends Serializable & Comparable<ID>>extends ReadableRepository<E, ID> {
 	
 	/**
-	 * Returns a {@link Chunk} of entities meeting the chunking restriction provided in the {@code Chunkable} object.
+	 * Returns a {@link List} of entities meeting the chunking restriction provided in the {@code Chunkable} object.
 	 *
 	 * @param chunkable chunking information
 	 * @return a chunk of entities
 	 * @throws NullPointerException 引数に{@code null}を与えた場合
 	 * @throws DataAccessException if a data access error occurred
 	 */
-	Chunk<E> findAll(Chunkable chunkable);
+	List<E> findAll(Chunkable chunkable);
 	
 }
