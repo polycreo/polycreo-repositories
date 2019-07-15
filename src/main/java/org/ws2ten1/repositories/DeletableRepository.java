@@ -28,8 +28,7 @@ import org.springframework.data.repository.Repository;
  * @param <ID> the type of the id of the entity the repository manages
  */
 @NoRepositoryBean
-public interface DeletableRepository<E, ID extends Serializable>
-		extends Repository<E, ID> {
+public interface DeletableRepository<E, ID extends Serializable>extends Repository<E, ID> {
 	
 	/**
 	 * Deletes the entity with the given id.

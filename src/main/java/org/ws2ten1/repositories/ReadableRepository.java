@@ -29,8 +29,7 @@ import org.springframework.data.repository.Repository;
  * @param <ID> the type of the id of the entity the repository manages
  */
 @NoRepositoryBean
-public interface ReadableRepository<E, ID extends Serializable>
-		extends Repository<E, ID> {
+public interface ReadableRepository<E, ID extends Serializable>extends Repository<E, ID> {
 	
 	/**
 	 * Retrieves an entity by its id.

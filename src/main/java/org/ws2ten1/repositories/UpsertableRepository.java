@@ -28,8 +28,7 @@ import org.springframework.data.repository.Repository;
  * @param <ID> the type of the id of the entity the repository manages
  */
 @NoRepositoryBean
-public interface UpsertableRepository<E, ID extends Serializable>
-		extends Repository<E, ID> {
+public interface UpsertableRepository<E, ID extends Serializable>extends Repository<E, ID> {
 	
 	/**
 	 * Saves a given entity. Use the returned instance for further operations as the save operation might have changed the

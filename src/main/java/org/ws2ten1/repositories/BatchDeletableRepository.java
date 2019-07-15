@@ -28,8 +28,7 @@ import org.springframework.data.repository.Repository;
  * @param <ID> the type of the id of the entity the repository manages
  */
 @NoRepositoryBean
-public interface BatchDeletableRepository<E, ID extends Serializable>
-		extends Repository<E, ID> {
+public interface BatchDeletableRepository<E, ID extends Serializable>extends Repository<E, ID> {
 	
 	/**
 	 * Returns all instances of the type with the given IDs.
