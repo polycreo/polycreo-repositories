@@ -21,6 +21,7 @@ import java.util.List;
 import org.springframework.dao.DataAccessException;
 import org.springframework.data.repository.NoRepositoryBean;
 
+import org.ws2ten1.chunks.ChunkFactory;
 import org.ws2ten1.chunks.Chunkable;
 
 /**
@@ -41,5 +42,12 @@ public interface ChunkableRepository<E, ID extends Serializable & Comparable<ID>
 	 * @throws DataAccessException if a data access error occurred
 	 */
 	List<E> findAll(Chunkable chunkable);
+	
+	/**
+	 * Returns a {@link ChunkFactory}.
+	 *
+	 * @return ChunkFactory for this entity.
+	 */
+	ChunkFactory<E, ID> getChunkFactory();
 	
 }
