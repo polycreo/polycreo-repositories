@@ -21,9 +21,9 @@ import org.springframework.data.repository.reactive.ReactiveSortingRepository;
  * Test for {@link ReactiveBatchUpsertableRepository}.
  */
 public class ReactiveBatchUpsertableRepositoryTest {
-	
-	@SuppressWarnings("unused")
-	private interface AssertTypeCompatibleWithReactiveSortingRepository
-			extends ReactiveSortingRepository<String, Long>, ReactiveBatchUpsertableRepository<String, Long> {
-	}
+
+//	@SuppressWarnings("unused")
+//	private interface AssertTypeCompatibleWithReactiveSortingRepository
+//			extends ReactiveSortingRepository<String, Long>, ReactiveBatchUpsertableRepository<String, Long> {
+//	}
 }
