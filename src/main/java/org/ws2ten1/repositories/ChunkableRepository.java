@@ -17,12 +17,12 @@ package org.ws2ten1.repositories;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.function.BiFunction;
 
 import org.springframework.dao.DataAccessException;
 import org.springframework.data.repository.NoRepositoryBean;
 
-import org.ws2ten1.chunks.ChunkFactory;
-import org.ws2ten1.chunks.Chunkable;
+import org.ws2ten1.chunkrequests.Chunkable;
 
 /**
  * Repository interface to retrieve chunk of entities.
@@ -44,10 +44,10 @@ public interface ChunkableRepository<E, ID extends Serializable & Comparable<ID>
 	List<E> findAll(Chunkable chunkable);
 	
 	/**
-	 * Returns a {@link ChunkFactory}.
+	 * Returns a Chunk factory function.
 	 *
 	 * @return ChunkFactory for this entity.
 	 */
-	ChunkFactory<E, ID> getChunkFactory();
+	<C> BiFunction<List<E>, Chunkable, C> getChunkFactory();
 	
 }
