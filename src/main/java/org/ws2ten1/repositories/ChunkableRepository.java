@@ -17,13 +17,11 @@ package org.ws2ten1.repositories;
 
 import java.io.Serializable;
 import java.util.List;
-import java.util.function.Function;
 
 import org.springframework.dao.DataAccessException;
 import org.springframework.data.repository.NoRepositoryBean;
 
 import org.ws2ten1.chunkrequests.Chunkable;
-import org.ws2ten1.chunkrequests.PaginationTokenEncoder;
 
 /**
  * Repository interface to retrieve chunk of entities.
@@ -43,19 +41,4 @@ public interface ChunkableRepository<E, ID extends Serializable & Comparable<ID>
 	 * @throws DataAccessException if a data access error occurred
 	 */
 	List<E> findAll(Chunkable chunkable);
-	
-	/**
-	 * Returns an ID extractor function.
-	 *
-	 * @return an ID extractor function for this entity.
-	 */
-	Function<E, ID> getIdExtractor();
-	
-	/**
-	 * Returns an ID extractor function.
-	 *
-	 * @return an ID extractor function for this entity.
-	 */
-	PaginationTokenEncoder getPaginationTokenEncoder();
-	
 }
