@@ -64,7 +64,7 @@ repositories {
 }
 
 dependencies {
-	api 'org.ws2ten1:ws2ten1-chunkrequests:1.0.0-rc1'
+	api 'org.ws2ten1:ws2ten1-chunkrequests:1.0.0-rc2'
 	api 'org.springframework.data:spring-data-commons'
 	implementation 'org.springframework.boot:spring-boot-starter'
 	implementation 'org.springframework:spring-tx'
