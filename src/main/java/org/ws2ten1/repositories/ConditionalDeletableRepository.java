@@ -20,6 +20,7 @@ import java.io.Serializable;
 import org.springframework.dao.DataAccessException;
 import org.springframework.dao.OptimisticLockingFailureException;
 import org.springframework.data.repository.NoRepositoryBean;
+import org.springframework.lang.Nullable;
 
 /**
  * Repository interface to delete single entity.
@@ -40,7 +41,7 @@ public interface ConditionalDeletableRepository<E, ID extends Serializable, C>ex
 	 * @throws OptimisticLockingFailureException
 	 * @throws DataAccessException if a data access error occurred
 	 */
-	void deleteById(ID id, C condition);
+	void deleteById(ID id, @Nullable C condition);
 	
 	/**
 	 * Deletes a given entity.
@@ -51,5 +52,5 @@ public interface ConditionalDeletableRepository<E, ID extends Serializable, C>ex
 	 * @throws OptimisticLockingFailureException
 	 * @throws DataAccessException if a data access error occurred
 	 */
-	void delete(E entity, C condition);
+	void delete(E entity, @Nullable C condition);
 }

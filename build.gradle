@@ -68,6 +68,7 @@ dependencies {
 	api 'org.springframework.data:spring-data-commons'
 	implementation 'org.springframework.boot:spring-boot-starter'
 	implementation 'org.springframework:spring-tx'
+	compileOnly 'com.google.code.findbugs:jsr305:3.0.2'
 
 	// lombok
 	compileOnly 'org.projectlombok:lombok'

@@ -21,6 +21,7 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.dao.IncorrectResultSizeDataAccessException;
 import org.springframework.dao.OptimisticLockingFailureException;
 import org.springframework.data.repository.NoRepositoryBean;
+import org.springframework.lang.Nullable;
 
 /**
  * Repository interface to update single entity with conditions.
@@ -44,5 +45,5 @@ public interface ConditionalUpdatableRepository<E, ID extends Serializable, C>ex
 	 * @throws OptimisticLockingFailureException
 	 * @throws DataAccessException if a data access error occurred
 	 */
-	<S extends E> S update(S entity, C condition);
+	<S extends E> S update(S entity, @Nullable C condition);
 }
