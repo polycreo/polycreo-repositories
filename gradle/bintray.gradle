@@ -35,16 +35,16 @@ if (System.env.BINTRAY_USER && System.env.BINTRAY_KEY) {
 		dryRun = System.env.CIRCLE_TAG == null
 		publish = true
 		pkg {
-			userOrg = "ws2ten1"
-			repo = "maven-release"
+			userOrg = "polycreo"
+			repo = "maven"
 			name = project.name
 			desc = project.description
-			websiteUrl = "https://github.com/ws2ten1/ws2ten1-repositories"
-			issueTrackerUrl = "https://github.com/ws2ten1/ws2ten1-repositories/issues"
-			vcsUrl = "https://github.com/ws2ten1/ws2ten1-repositories.git"
+			websiteUrl = "https://github.com/polycreo/polycreo-repositories"
+			issueTrackerUrl = "https://github.com/polycreo/polycreo-repositories/issues"
+			vcsUrl = "https://github.com/polycreo/polycreo-repositories.git"
 			licenses = ["Apache-2.0"]
-			labels = ["ws2ten1", "Spring framework"]
-			githubRepo = 'ws2ten1/ws2ten1-repositories'
+			labels = ["polycreo", "Spring framework"]
+			githubRepo = 'polycreo/polycreo-repositories'
 			version {
 				name = project.version
 				vcsTag = project.version
