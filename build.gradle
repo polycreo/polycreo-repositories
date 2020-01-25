@@ -52,7 +52,7 @@ repositories {
 }
 
 dependencies {
-	api 'org.polycreo:polycreo-chunkrequests:850ba0ec80d03c5a07158a69b66cd234c7a0ffea'
+	api 'com.github.polycreo:polycreo-chunkrequests:850ba0ec80d03c5a07158a69b66cd234c7a0ffea'
 	api 'org.springframework.data:spring-data-commons'
 	implementation 'org.springframework.boot:spring-boot-starter'
 	implementation 'org.springframework:spring-tx'
@@ -91,6 +91,18 @@ tasks.withType(com.github.spotbugs.SpotBugsTask) {
 	reports {
 		html.enabled = true
 		xml.enabled = false
+	}
+}
+
+tasks.withType(Test) {
+	exclude "**/*\$*", "**/*Tests.class", "**/examples/**"
+	reports {
+		html.enabled = true
+		junitXml.outputPerTestCase = false
+	}
+	testLogging.exceptionFormat = 'full'
+	beforeTest {
+		logger.lifecycle("{} > {}", it.parent.name, it.name)
 	}
 }
 
